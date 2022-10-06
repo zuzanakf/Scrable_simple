@@ -47,7 +47,21 @@ def countdown(t,message):
     print(message)
 answer("Are you ready?! (yes or YES)","yes","YES","Lets Go","LETS GO!")
 # function call
-countdown(5,"Player one your 1st set of letters are below")
+countdown(5, player_1+" your 1st set of letters are below")
 #first set of letters
-print(random.choices(letters,k=7))
-
+def gen7():
+    print(random.choices(letters,k=7))
+p1p = 0
+p2p = 0
+def a_round(number):
+    gen7()
+    p1_1word = input(player_1+ " enter your "+ number + " word:")
+    print(player_2," your "+ number + " set of letters are below")
+    gen7()
+    p2_1word = input(player_2+" enter your first word:")
+    #storing results 
+    return p1_1word.upper()
+    return p2_1word.upper()
+a_round("first")
+p1p= p1p+ score_word(p1_1word)
+p2p = p2p +score_word(p2_1word)

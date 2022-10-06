@@ -1,5 +1,6 @@
 # imports
 import time
+import random
 #letters and their values
 letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 points = [1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 4, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10]
@@ -46,6 +47,7 @@ def countdown(t,message):
     print(message)
 answer("Are you ready?! (yes or YES)","yes","YES","Lets Go","LETS GO!")
 # function call
-countdown(5,"Lets Get STARTED!!")
-
+countdown(5,"Player one your 1st set of letters are below")
+#first set of letters
+print(random.choices(letters,k=7))
 

@@ -1,9 +1,19 @@
 # imports
+from asyncio import constants
+from calendar import c
 import time
 import random
+#scores
+p1p = []
+p2p = []
+#words
+p1w = []
+p2w = []
 #letters and their values
 letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 points = [1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 4, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10]
+cots = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"]
+vowles = ["A","E","I","O","U"]
 letter_to_points = {key:value for key,value in zip(letters,points)}
 letter_to_points[" "] = 0
 
@@ -50,18 +60,45 @@ answer("Are you ready?! (yes or YES)","yes","YES","Lets Go","LETS GO!")
 countdown(5, player_1+" your 1st set of letters are below")
 #first set of letters
 def gen7():
-    print(random.choices(letters,k=7))
-p1p = 0
-p2p = 0
-def a_round(number):
-    gen7()
-    p1_1word = input(player_1+ " enter your "+ number + " word:")
-    print(player_2," your "+ number + " set of letters are below")
-    gen7()
-    p2_1word = input(player_2+" enter your first word:")
-    #storing results 
-    return p1_1word.upper()
-    return p2_1word.upper()
-a_round("first")
-p1p= p1p+ score_word(p1_1word)
-p2p = p2p +score_word(p2_1word)
+    sevenl = (random.choices(cots,k=5)) + (random.choices(vowles,k=2))
+    print(sevenl)
+
+#round 1 
+gen7()
+p1_1word = input(player_1+ " enter your first word:")
+print(player_2," your first set of letters are below")
+gen7()
+p2_1word = input(player_2+" enter your first word:")
+#storing results 
+p1w.append(p1_1word.upper())
+p2w.append(p2_1word.upper())
+p1p.append(score_word(p1_1word))
+p2p.append(score_word(p2_1word))
+
+#round 2 
+print("Time for round two!")
+countdown(5, player_1+" your second set of letters are below")
+gen7()
+p1_2word = input(player_1+ " enter your second word:")
+print(player_2," your second set of letters are below")
+gen7()
+p2_2word = input(player_2+" enter your second word:")
+#storing results 
+p1w.append(p1_2word.upper())
+p2w.append(p2_2word.upper())
+p1p.append(score_word(p1_2word.upper()))
+p2p.append(score_word(p2_2word.upper()))
+
+#round 3 
+print("Time for round three!")
+countdown(5, player_1+" your third set of letters are below")
+gen7()
+p1_3word = input(player_1+ " enter your third word:")
+print(player_2," your third set of letters are below")
+gen7()
+p2_3word = input(player_2+" enter your third word:")
+#storing results 
+p1w.append(p1_3word.upper())
+p2w.append(p2_3word.upper())
+p1p.append(score_word(p1_3word.upper()))
+p2p.append(score_word(p2_3word.upper()))

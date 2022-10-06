@@ -19,9 +19,18 @@ player_2 = input("Now for player two, please enter your name:")
 
 #explaining the game
 print("Hello", player_1 +" and ", player_2 + ". You are going to play a game of scrabbel. ")
-rules = input("Would you like to know the rules? (yes or no)")
-if rules == "yes":
-    print("There are three rounds. Each round you will be given 7 Random letters and you will have to submit a word. Each letter has a certain amount of points.")
-else:
-    y=0
+answer = None
+while answer not in ("yes","no"):
+    rules = input("Would you like to know the rules? (yes or no)")
+    if rules == "yes":
+        print("There are three rounds. Each round you will be given 7 Random letters and you will have to submit a word. Each letter has a certain amount of points.")
+        break
+    elif rules == "no":
+        y = 0
+        break
+    else:
+        print("Please enter yes or no")
+
 print("hi")
+
+

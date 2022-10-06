@@ -1,1 +1,27 @@
-print('hello world')
+
+
+#letters and their values
+letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+points = [1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 4, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10]
+letter_to_points = {key:value for key,value in zip(letters,points)}
+letter_to_points[" "] = 0
+
+#returns the score of a word
+def score_word(word):
+  point_total = 0
+  for x in word:
+    point_total += letter_to_points.get(x,0)
+  return point_total
+
+#introducing players
+player_1 = input("Enter your name Player 1: ")
+player_2 = input("Now for player two, please enter your name:")
+
+#explaining the game
+print("Hello", player_1 +" and ", player_2 + ". You are going to play a game of scrabbel. ")
+rules = input("Would you like to know the rules? (yes or no)")
+if rules == "yes":
+    print("There are three rounds. Each round you will be given 7 Random letters and you will have to submit a word. Each letter has a certain amount of points.")
+else:
+    y=0
+print("hi")

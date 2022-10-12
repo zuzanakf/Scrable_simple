@@ -102,3 +102,38 @@ p1w.append(p1_3word.upper())
 p2w.append(p2_3word.upper())
 p1p.append(score_word(p1_3word.upper()))
 p2p.append(score_word(p2_3word.upper()))
+
+#totals
+t1 = 0
+for x in p1p:
+    t1 += x
+t2= 0
+for x in p2p:
+    t2 += x
+
+#winner
+if t1>t2:
+    winner = player_1
+elif t2>t1:
+    winner = player_2
+else:
+    winner = "No one, its a draw!"
+
+countdown(3,"The winner is: " +winner)
+#results1
+
+reply2 = input("Do you want to see the results?")
+if reply2 == "yes":
+    words_points1 = {key:value for key,value in zip(p1w,p1p)}
+    print(player_1 +" Results:")
+    for x,yu in words_points1.items():
+        print(x + ":" + str(yu))
+
+    #results2
+    words_points2 = {key:value for key,value in zip(p2w,p2p)}
+    print(player_2 +" Results:")
+    for x,yu in words_points2.items():
+        print(x + ":" + str(yu))
+else:
+    print("No Problem!")
+print("Thanks for playing!!!")
